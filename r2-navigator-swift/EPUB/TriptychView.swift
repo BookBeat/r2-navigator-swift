@@ -96,7 +96,15 @@ final class TriptychView: UIView {
         }
     }
 
-    fileprivate(set) var index: Int
+    /// Index of the document currently being displayed.
+    fileprivate(set) var index: Int {
+        willSet {
+            guard let cw = currentView as? DocumentWebView else {
+                return
+            }
+            cw.scrollAt(location: (index < newValue) ? trailing : leading)
+        }
+    }
 
     fileprivate let scrollView: UIScrollView
 
@@ -105,7 +113,7 @@ final class TriptychView: UIView {
     internal var views: Views?
     
     let leading, trailing: BinaryLocation
-    let direction: PageProgressionDirection
+    let readingProgression: ReadingProgression
 
     fileprivate var clamping: Clamping = .none
 
@@ -113,17 +121,17 @@ final class TriptychView: UIView {
         return index == 0 || index == viewCount - 1
     }
     
-    public init(frame: CGRect, viewCount: Int, initialIndex: Int, pageDirection: PageProgressionDirection) {
+    public init(frame: CGRect, viewCount: Int, initialIndex: Int, readingProgression: ReadingProgression) {
 
         precondition(viewCount >= 1)
         precondition(initialIndex >= 0 && initialIndex < viewCount)
 
         index = initialIndex
         self.viewCount = viewCount
-        self.direction = pageDirection
+        self.readingProgression = readingProgression
         self.scrollView = UIScrollView()
-        
-        if self.direction == .rtl {
+
+        if self.readingProgression == .rtl {
             leading = .right; trailing = .left
         } else {
             leading = .left; trailing = .right
@@ -138,6 +146,13 @@ final class TriptychView: UIView {
         scrollView.bounces = false
         scrollView.showsHorizontalScrollIndicator = false
         addSubview(scrollView)
+        
+        // Adds an empty view before the scroll view to have a consistent behavior on all iOS versions, regarding to the content inset adjustements. Even if automaticallyAdjustsScrollViewInsets is not set to false on the navigator's parent view controller, the scroll view insets won't be adjusted if the scroll view is not the first child in the subviews hierarchy.
+        insertSubview(UIView(frame: .zero), at: 0)
+        if #available(iOS 11.0, *) {
+            // Prevents the pages from jumping down when the status bar is toggled
+            scrollView.contentInsetAdjustmentBehavior = .never
+        }
     }
 
     deinit {
@@ -145,7 +160,7 @@ final class TriptychView: UIView {
             return
         }
         for view in views.array {
-            if let webview = (view as? WebView) {
+            if let webview = (view as? DocumentWebView) {
                 webview.removeMessageHandlers()
             }
         }
@@ -171,7 +186,7 @@ final class TriptychView: UIView {
         scrollView.contentSize = CGSize(width: size.width * CGFloat(views.count), height: size.height)
         
         let viewList:[UIView] = {
-            if self.direction == .rtl {
+            if self.readingProgression == .rtl {
                 return views.array.reversed()
             }
             return views.array
@@ -184,7 +199,7 @@ final class TriptychView: UIView {
         let pageOffset = min(1, index)
         
         let offset:CGFloat = {
-            if self.direction == .rtl {
+            if self.readingProgression == .rtl {
                 return scrollView.contentSize.width - CGFloat(pageOffset+1)*scrollView.frame.width
             }
             return size.width * CGFloat(pageOffset)
@@ -279,14 +294,14 @@ final class TriptychView: UIView {
     }
 
     private func syncSubviews() {
-        let webViewsBefore = scrollView.subviews.compactMap { $0 as? WebView }
+        let webViewsBefore = scrollView.subviews.compactMap { $0 as? DocumentWebView }
         scrollView.subviews.forEach({
             $0.removeFromSuperview()
         })
 
         if let viewArray = views?.array {
             viewArray.forEach({
-                if let webview = ($0 as? WebView) {
+                if let webview = ($0 as? DocumentWebView) {
                     webview.addMessageHandlers()
                 }
                 self.scrollView.addSubview($0)
@@ -300,12 +315,35 @@ final class TriptychView: UIView {
 }
 
 extension TriptychView {
+
+    /// Wraps a `move` triptych block to animate or not the change.
+    /// - Parameter delayedFadeIn: This is used when we want to jump to a specific location in the resource. The rendering is sometimes very slow in this case so we have a generous delay before we show the view again.
+    func performTransition(animated: Bool = false, delayed: Bool = false, completion: @escaping () -> (), _ transition: @escaping (TriptychView) -> ()) {
+        func fade(to alpha: CGFloat, completion: @escaping () -> ()) {
+            if animated {
+                UIView.animate(withDuration: 0.15, animations: {
+                    self.alpha = alpha
+                }) { _ in completion() }
+            } else {
+                self.alpha = alpha
+                completion()
+            }
+        }
+        
+        fade(to: 0) {
+            transition(self)
+            DispatchQueue.main.asyncAfter(deadline: .now() + (delayed ? 0.5 : 0)) {
+                fade(to: 1, completion: completion)
+            }
+        }
+    }
+    
     /// Move to the given index
     ///
     /// - Parameters:
     ///   - nextIndex: The index to move to.
     internal func moveTo(index nextIndex: Int, id: String? = nil) {
-        var cw = currentView as! WebView
+        var cw = currentView as! DocumentWebView
 
         guard index != nextIndex else {
             if let id = id {
@@ -321,16 +359,14 @@ extension TriptychView {
         var currentRect = scrollView.contentOffset
         let currentFrameSize = scrollView.frame.size
         
-        let coefficient = CGFloat(direction == .rtl ? -1:1)
+        let coefficient = CGFloat(readingProgression == .rtl ? -1:1)
 
         if index < nextIndex {
             currentRect.x += coefficient*currentFrameSize.width
             scrollView.scrollRectToVisible(CGRect(origin: currentRect, size: currentFrameSize), animated: false)
-            cw.scrollAt(location: trailing)
         } else {
             currentRect.x -= coefficient*currentFrameSize.width
             scrollView.scrollRectToVisible(CGRect(origin: currentRect, size: currentFrameSize), animated: false)
-            cw.scrollAt(location: leading)
         }
 
         let previousIndex = index
@@ -340,7 +376,7 @@ extension TriptychView {
         updateViews(previousIndex: previousIndex)
 
         // get the new current view after change.
-        cw = currentView as! WebView
+        cw = currentView as! DocumentWebView
         if let id = id {
             if id == "" {
                 if abs(previousIndex - nextIndex) == 1 {
@@ -360,17 +396,12 @@ extension TriptychView {
         }
     }
 
-    /// Return the index of the document currently being displayed.
-    public func getCurrentDocumentIndex() -> Int {
-        return index
-    }
-
     /// Returns the progression in the document currently being displayed.
-    public func getCurrentDocumentProgression() -> Double? {
+    var currentDocumentProgression: Double? {
         guard currentView != nil else {
             return nil
         }
-        return (currentView as! WebView).progression
+        return (currentView as! DocumentWebView).progression
     }
 }
 
@@ -422,7 +453,7 @@ extension TriptychView: UIScrollViewDelegate {
         let previousIndex = index
         
         let offset:CGFloat = {
-            if self.direction == .rtl {
+            if self.readingProgression == .rtl {
                 return scrollView.contentSize.width - (scrollView.contentOffset.x + scrollView.frame.width)
             }
             return scrollView.contentOffset.x
@@ -459,7 +490,7 @@ extension TriptychView: UIScrollViewDelegate {
         if(fmod(scrollView.contentOffset.x, scrollView.frame.width) != 0.0) {
             
             let adjustedOffset:CGFloat = {
-                if self.direction == .rtl {
+                if self.readingProgression == .rtl {
                     return scrollView.contentSize.width - CGFloat(pageOffset + 1) * scrollView.frame.width
                 } else {
                     return CGFloat(pageOffset) * scrollView.frame.width

@@ -7,24 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03BF0132221DAFDA0051050B /* EditingAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BF0131221DAFDA0051050B /* EditingAction.swift */; };
-		1D3A2F56218C85A100108B31 /* PageTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A2F55218C85A100108B31 /* PageTransition.swift */; };
+		03C3CC68222DBD8600A01731 /* R2Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C3CC67222DBD8600A01731 /* R2Shared.framework */; };
+		CA0B3AC3222EE555006D9363 /* PDFNavigatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0B3AC2222EE555006D9363 /* PDFNavigatorViewController.swift */; };
+		CA26EF7E22803FE90011653E /* VisualNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA26EF7D22803FE90011653E /* VisualNavigator.swift */; };
+		CA479DC3226493570053445E /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA479DC2226493570053445E /* UIView.swift */; };
+		CA479DC52264AEA20053445E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA479DC42264AEA20053445E /* UIColor.swift */; };
+		CA94291122BBD3F100305CDB /* fxl-wrapper.html in Resources */ = {isa = PBXBuildFile; fileRef = CA94290E22BBD3F100305CDB /* fxl-wrapper.html */; };
+		CA94292122BCF97700305CDB /* Static in Resources */ = {isa = PBXBuildFile; fileRef = CA94292022BCF97700305CDB /* Static */; };
+		CA94293022BD2D2F00305CDB /* Scripts in Resources */ = {isa = PBXBuildFile; fileRef = CA94292F22BD2D2F00305CDB /* Scripts */; };
+		CAB9086B22492D4C00711C3F /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB9086A22492D4C00711C3F /* Navigator.swift */; };
+		CAC2A6D72292E4BA000AA2A7 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC2A6D62292E4BA000AA2A7 /* WebView.swift */; };
+		CACE84F82254BE5F00E19E8B /* PDFDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACE84F72254BE5F00E19E8B /* PDFDocumentView.swift */; };
+		CACE84FB2254BFEE00E19E8B /* EditingAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACE84FA2254BFEE00E19E8B /* EditingAction.swift */; };
+		CACE851F225CDE3400E19E8B /* FixedDocumentWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACE851E225CDE3300E19E8B /* FixedDocumentWebView.swift */; };
+		CACE8521225CDFB000E19E8B /* ReflowableDocumentWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACE8520225CDFB000E19E8B /* ReflowableDocumentWebView.swift */; };
+		CAD178B622B3B553004E6812 /* R2NavigatorLocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD178B522B3B553004E6812 /* R2NavigatorLocalizedString.swift */; };
+		CAD178BA22B3B5B6004E6812 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CAD178BC22B3B5B6004E6812 /* Localizable.strings */; };
+		CAEACA222272EFBD00476340 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEACA212272EFBD00476340 /* ImageViewController.swift */; };
 		F341C2711F506ED5005E6758 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F341C2701F506ED5005E6758 /* UserSettings.swift */; };
 		F3E7D3D41F4D83B000DF166D /* r2-navigator-swift.h in Headers */ = {isa = PBXBuildFile; fileRef = F3E7D3C61F4D83B000DF166D /* r2-navigator-swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F3E7D3DE1F4D845B00DF166D /* BinaryLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7D3DD1F4D845B00DF166D /* BinaryLocation.swift */; };
 		F3E7D3E01F4D847E00DF166D /* Disjunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7D3DF1F4D847E00DF166D /* Disjunction.swift */; };
-		F3E7D3E21F4D84A000DF166D /* NavigatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7D3E11F4D84A000DF166D /* NavigatorViewController.swift */; };
+		F3E7D3E21F4D84A000DF166D /* EPUBNavigatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7D3E11F4D84A000DF166D /* EPUBNavigatorViewController.swift */; };
 		F3E7D3E41F4D84DC00DF166D /* TriptychView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7D3E31F4D84DC00DF166D /* TriptychView.swift */; };
-		F3E7D3E61F4D84EF00DF166D /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7D3E51F4D84EF00DF166D /* WebView.swift */; };
-		F3E7D42A1F4EE07D00DF166D /* R2Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3E7D4291F4EE07D00DF166D /* R2Shared.framework */; };
-		F3E7D42E1F4EE0FE00DF166D /* CbzNavigatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7D42D1F4EE0FE00DF166D /* CbzNavigatorViewController.swift */; };
+		F3E7D3E61F4D84EF00DF166D /* DocumentWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7D3E51F4D84EF00DF166D /* DocumentWebView.swift */; };
+		F3E7D42E1F4EE0FE00DF166D /* CBZNavigatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E7D42D1F4EE0FE00DF166D /* CBZNavigatorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		03BF0131221DAFDA0051050B /* EditingAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingAction.swift; sourceTree = "<group>"; };
-		1D3A2F55218C85A100108B31 /* PageTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTransition.swift; sourceTree = "<group>"; };
+		03C3CC67222DBD8600A01731 /* R2Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = R2Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA0B3AC2222EE555006D9363 /* PDFNavigatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFNavigatorViewController.swift; sourceTree = "<group>"; };
+		CA26EF7D22803FE90011653E /* VisualNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualNavigator.swift; sourceTree = "<group>"; };
+		CA479DC2226493570053445E /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		CA479DC42264AEA20053445E /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		CA94290E22BBD3F100305CDB /* fxl-wrapper.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fxl-wrapper.html"; sourceTree = "<group>"; };
+		CA94292022BCF97700305CDB /* Static */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Static; sourceTree = "<group>"; };
+		CA94292F22BD2D2F00305CDB /* Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Scripts; sourceTree = "<group>"; };
+		CAB9086A22492D4C00711C3F /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		CAC2A6D62292E4BA000AA2A7 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		CACE84F72254BE5F00E19E8B /* PDFDocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFDocumentView.swift; sourceTree = "<group>"; };
+		CACE84FA2254BFEE00E19E8B /* EditingAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingAction.swift; sourceTree = "<group>"; };
+		CACE851E225CDE3300E19E8B /* FixedDocumentWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedDocumentWebView.swift; sourceTree = "<group>"; };
+		CACE8520225CDFB000E19E8B /* ReflowableDocumentWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflowableDocumentWebView.swift; sourceTree = "<group>"; };
+		CAD178B522B3B553004E6812 /* R2NavigatorLocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R2NavigatorLocalizedString.swift; sourceTree = "<group>"; };
+		CAD178BB22B3B5B6004E6812 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CAEACA212272EFBD00476340 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		F341C2701F506ED5005E6758 /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
-		F3B2C86C1F603E79007601E4 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		F3E7D3C31F4D83B000DF166D /* R2Navigator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = R2Navigator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3E7D3C61F4D83B000DF166D /* r2-navigator-swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "r2-navigator-swift.h"; sourceTree = "<group>"; };
 		F3E7D3C71F4D83B000DF166D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -32,11 +60,10 @@
 		F3E7D3D31F4D83B000DF166D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3E7D3DD1F4D845B00DF166D /* BinaryLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryLocation.swift; sourceTree = "<group>"; };
 		F3E7D3DF1F4D847E00DF166D /* Disjunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disjunction.swift; sourceTree = "<group>"; };
-		F3E7D3E11F4D84A000DF166D /* NavigatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigatorViewController.swift; sourceTree = "<group>"; };
+		F3E7D3E11F4D84A000DF166D /* EPUBNavigatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPUBNavigatorViewController.swift; sourceTree = "<group>"; };
 		F3E7D3E31F4D84DC00DF166D /* TriptychView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriptychView.swift; sourceTree = "<group>"; };
-		F3E7D3E51F4D84EF00DF166D /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
-		F3E7D4291F4EE07D00DF166D /* R2Shared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = R2Shared.framework; path = Carthage/Build/iOS/R2Shared.framework; sourceTree = "<group>"; };
-		F3E7D42D1F4EE0FE00DF166D /* CbzNavigatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CbzNavigatorViewController.swift; sourceTree = "<group>"; };
+		F3E7D3E51F4D84EF00DF166D /* DocumentWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentWebView.swift; sourceTree = "<group>"; };
+		F3E7D42D1F4EE0FE00DF166D /* CBZNavigatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBZNavigatorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,13 +71,76 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3E7D42A1F4EE07D00DF166D /* R2Shared.framework in Frameworks */,
+				03C3CC68222DBD8600A01731 /* R2Shared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA0B3AC1222EE530006D9363 /* PDF */ = {
+			isa = PBXGroup;
+			children = (
+				CA0B3AC2222EE555006D9363 /* PDFNavigatorViewController.swift */,
+				CACE84F72254BE5F00E19E8B /* PDFDocumentView.swift */,
+			);
+			path = PDF;
+			sourceTree = "<group>";
+		};
+		CA479DC1226493390053445E /* Toolkit */ = {
+			isa = PBXGroup;
+			children = (
+				CA479DC2226493570053445E /* UIView.swift */,
+				CA479DC42264AEA20053445E /* UIColor.swift */,
+				CAD178B522B3B553004E6812 /* R2NavigatorLocalizedString.swift */,
+			);
+			path = Toolkit;
+			sourceTree = "<group>";
+		};
+		CAA9A38A226F406300BE1D6A /* EPUB */ = {
+			isa = PBXGroup;
+			children = (
+				F3E7D3E11F4D84A000DF166D /* EPUBNavigatorViewController.swift */,
+				F3E7D3E31F4D84DC00DF166D /* TriptychView.swift */,
+				CAC2A6D62292E4BA000AA2A7 /* WebView.swift */,
+				F3E7D3E51F4D84EF00DF166D /* DocumentWebView.swift */,
+				CACE851E225CDE3300E19E8B /* FixedDocumentWebView.swift */,
+				CACE8520225CDFB000E19E8B /* ReflowableDocumentWebView.swift */,
+				F3E7D3DD1F4D845B00DF166D /* BinaryLocation.swift */,
+				F3E7D3DF1F4D847E00DF166D /* Disjunction.swift */,
+				F341C2701F506ED5005E6758 /* UserSettings.swift */,
+				CAA9A38B226F407B00BE1D6A /* Resources */,
+			);
+			path = EPUB;
+			sourceTree = "<group>";
+		};
+		CAA9A38B226F407B00BE1D6A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CA94290E22BBD3F100305CDB /* fxl-wrapper.html */,
+				CA94292F22BD2D2F00305CDB /* Scripts */,
+				CA94292022BCF97700305CDB /* Static */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CAD178B722B3B580004E6812 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CAD178BC22B3B5B6004E6812 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CAFC2F672278957A007DBB02 /* CBZ */ = {
+			isa = PBXGroup;
+			children = (
+				F3E7D42D1F4EE0FE00DF166D /* CBZNavigatorViewController.swift */,
+				CAEACA212272EFBD00476340 /* ImageViewController.swift */,
+			);
+			path = CBZ;
+			sourceTree = "<group>";
+		};
 		F3E7D3B91F4D83B000DF166D = {
 			isa = PBXGroup;
 			children = (
@@ -74,8 +164,14 @@
 			children = (
 				F3E7D3C61F4D83B000DF166D /* r2-navigator-swift.h */,
 				F3E7D3C71F4D83B000DF166D /* Info.plist */,
-				F3E7D42C1F4EE0DB00DF166D /* CBZ */,
-				F3E7D42B1F4EE0D200DF166D /* EPUB */,
+				CAB9086A22492D4C00711C3F /* Navigator.swift */,
+				CA26EF7D22803FE90011653E /* VisualNavigator.swift */,
+				CACE84FA2254BFEE00E19E8B /* EditingAction.swift */,
+				CAFC2F672278957A007DBB02 /* CBZ */,
+				CAA9A38A226F406300BE1D6A /* EPUB */,
+				CA0B3AC1222EE530006D9363 /* PDF */,
+				CA479DC1226493390053445E /* Toolkit */,
+				CAD178B722B3B580004E6812 /* Resources */,
 			);
 			path = "r2-navigator-swift";
 			sourceTree = "<group>";
@@ -92,33 +188,9 @@
 		F3E7D3E71F4DC40800DF166D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F3B2C86C1F603E79007601E4 /* SwiftyJSON.framework */,
-				F3E7D4291F4EE07D00DF166D /* R2Shared.framework */,
+				03C3CC67222DBD8600A01731 /* R2Shared.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F3E7D42B1F4EE0D200DF166D /* EPUB */ = {
-			isa = PBXGroup;
-			children = (
-				F3E7D3E11F4D84A000DF166D /* NavigatorViewController.swift */,
-				F3E7D3E31F4D84DC00DF166D /* TriptychView.swift */,
-				F3E7D3E51F4D84EF00DF166D /* WebView.swift */,
-				F3E7D3DD1F4D845B00DF166D /* BinaryLocation.swift */,
-				F3E7D3DF1F4D847E00DF166D /* Disjunction.swift */,
-				F341C2701F506ED5005E6758 /* UserSettings.swift */,
-				1D3A2F55218C85A100108B31 /* PageTransition.swift */,
-				03BF0131221DAFDA0051050B /* EditingAction.swift */,
-			);
-			name = EPUB;
-			sourceTree = "<group>";
-		};
-		F3E7D42C1F4EE0DB00DF166D /* CBZ */ = {
-			isa = PBXGroup;
-			children = (
-				F3E7D42D1F4EE0FE00DF166D /* CbzNavigatorViewController.swift */,
-			);
-			name = CBZ;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,19 +232,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = Readium;
 				TargetAttributes = {
 					F3E7D3C21F4D83B000DF166D = {
 						CreatedOnToolsVersion = 8.3.3;
-						LastSwiftMigration = 0930;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Manual;
 					};
 				};
 			};
 			buildConfigurationList = F3E7D3BD1F4D83B000DF166D /* Build configuration list for PBXProject "r2-navigator-swift" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -192,6 +264,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA94291122BBD3F100305CDB /* fxl-wrapper.html in Resources */,
+				CA94292122BCF97700305CDB /* Static in Resources */,
+				CAD178BA22B3B5B6004E6812 /* Localizable.strings in Resources */,
+				CA94293022BD2D2F00305CDB /* Scripts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,25 +278,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3E7D3E21F4D84A000DF166D /* NavigatorViewController.swift in Sources */,
-				03BF0132221DAFDA0051050B /* EditingAction.swift in Sources */,
-				F3E7D3E61F4D84EF00DF166D /* WebView.swift in Sources */,
-				F3E7D42E1F4EE0FE00DF166D /* CbzNavigatorViewController.swift in Sources */,
+				F3E7D3E21F4D84A000DF166D /* EPUBNavigatorViewController.swift in Sources */,
+				CA26EF7E22803FE90011653E /* VisualNavigator.swift in Sources */,
+				CAB9086B22492D4C00711C3F /* Navigator.swift in Sources */,
+				CA0B3AC3222EE555006D9363 /* PDFNavigatorViewController.swift in Sources */,
+				F3E7D3E61F4D84EF00DF166D /* DocumentWebView.swift in Sources */,
+				F3E7D42E1F4EE0FE00DF166D /* CBZNavigatorViewController.swift in Sources */,
+				CA479DC52264AEA20053445E /* UIColor.swift in Sources */,
+				CAD178B622B3B553004E6812 /* R2NavigatorLocalizedString.swift in Sources */,
 				F3E7D3E01F4D847E00DF166D /* Disjunction.swift in Sources */,
+				CAEACA222272EFBD00476340 /* ImageViewController.swift in Sources */,
+				CACE84FB2254BFEE00E19E8B /* EditingAction.swift in Sources */,
 				F341C2711F506ED5005E6758 /* UserSettings.swift in Sources */,
+				CACE851F225CDE3400E19E8B /* FixedDocumentWebView.swift in Sources */,
 				F3E7D3DE1F4D845B00DF166D /* BinaryLocation.swift in Sources */,
+				CA479DC3226493570053445E /* UIView.swift in Sources */,
+				CACE84F82254BE5F00E19E8B /* PDFDocumentView.swift in Sources */,
+				CAC2A6D72292E4BA000AA2A7 /* WebView.swift in Sources */,
 				F3E7D3E41F4D84DC00DF166D /* TriptychView.swift in Sources */,
-				1D3A2F56218C85A100108B31 /* PageTransition.swift in Sources */,
+				CACE8521225CDFB000E19E8B /* ReflowableDocumentWebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CAD178BC22B3B5B6004E6812 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CAD178BB22B3B5B6004E6812 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F3E7D3D51F4D83B000DF166D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -284,6 +382,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -354,14 +453,13 @@
 				INFOPLIST_FILE = "r2-navigator-swift/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.readium.r2-navigator-swift";
 				PRODUCT_NAME = R2Navigator;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -383,13 +481,12 @@
 				INFOPLIST_FILE = "r2-navigator-swift/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.readium.r2-navigator-swift";
 				PRODUCT_NAME = R2Navigator;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
