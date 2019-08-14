@@ -52,7 +52,7 @@ open class EPUBNavigatorViewController: UIViewController, VisualNavigator, Logga
     public weak var delegate: EPUBNavigatorDelegate?
     public var userSettings: UserSettings
     
-    private let publication: Publication
+    public let publication: Publication
     private let license: DRMLicense?
     private let editingActions: EditingActionsController
     /// Content insets used to add some vertical margins around reflowable EPUB publications. The insets can be configured for each size class to allow smaller margins on compact screens.
