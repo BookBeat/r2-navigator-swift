@@ -111,16 +111,19 @@ final class WebView: WKWebView {
                 let isAtFirstPageInDocument = scrollView.contentOffset.x == 0
                 if !isAtFirstPageInDocument {
                     target.viewDelegate?.willAnimatePageChange()
-                    return scrollView.scrollToPreviousPage()
+                    scrollView.scrollToPreviousPage()
+                } else {
+                    target.viewDelegate?.displayLeftDocument()
                 }
             case .right:
                 let isAtLastPageInDocument = scrollView.contentOffset.x == scrollView.contentSize.width - scrollView.frame.size.width
                 if !isAtLastPageInDocument {
                     target.viewDelegate?.willAnimatePageChange()
-                    return scrollView.scrollToNextPage()
+                    scrollView.scrollToNextPage()
+                } else {
+                    target.viewDelegate?.displayRightDocument()
                 }
             }
-            evaluateJavascriptForScroll(on: target)
         }
     }
     
